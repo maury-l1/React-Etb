@@ -59,19 +59,21 @@ class Menu extends React.Component {
     ];
 
     return (
-      <div className="bg-sky-50">
+      <div className="">
         <div className='main'>
-          <div className='copy-container'>
-            <h1>Encuentra tu bolo</h1>
-            <h2>Navega entre las distintas ofertas</h2>
+          <div className='bg-gray-900' >
+            <h1 className="font-serif text-sky-50">Encuentra tu bolo</h1>
+            <h2 className="font-mono text-sky-50">Navega entre las distintas ofertas</h2>
           </div>
           <div className='lesson-container'>
-            <h3>Artistas</h3>
+            <div className=''>
+            <h3 className='font-bbh'>ARTISTAS</h3>
+            </div>
             {artistList.map((artistItem) => {
               return (
                 <Lesson
                   key={artistItem.id}
-                  name={artistItem.name}
+                  name={artistItem.name}App
                   image={artistItem.image}
                   introduction={artistItem.introduction}
                 />
