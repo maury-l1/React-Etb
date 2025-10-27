@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+@theme {
+  --color-*: initial;
+  --color-brown: #220901;
+  --color-red: #621708;
+  --color-orange: #941B0C;
+  --color-yellow: #3ab7bf;
+  --color-bermuda: #78dcca;
+  --font-nycd: '"Nothing you could do"', sans-serif;
+}
 

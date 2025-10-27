@@ -4,11 +4,12 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-    theme: {
-      extend: {fontFamily: {
-        'bbh': ['"BBH Sans Bogle"', 'sans-serif'],
-      }},
+  theme: {
+    extend: {
+      fontFamily: {
+        nothing: ['"Nothing You Could Do"', 'cursive'], // <- IMPORTANTE las comillas y mayúsculas
+      },
     },
-    plugins: [],
+  },
+  plugins: [],
 }
-

@@ -59,15 +59,10 @@ class Menu extends React.Component {
     ];
 
     return (
-      <div className="">
-        <div className='main'>
-          <div className='bg-gray-900' >
-            <h1 className="font-serif text-sky-50">Encuentra tu bolo</h1>
-            <h2 className="font-mono text-sky-50">Navega entre las distintas ofertas</h2>
-          </div>
+      <div className="h-fit block bg-red">
           <div className='lesson-container'>
             <div className=''>
-            <h3 className='font-bbh'>ARTISTAS</h3>
+            <h3 className='text-amber-50 text-4xl'>ARTISTAS</h3>
             </div>
             {artistList.map((artistItem) => {
               return (
@@ -93,7 +88,6 @@ class Menu extends React.Component {
                 )
             })}
           </div>
-        </div>
       </div>
     );
   }
