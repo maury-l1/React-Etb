@@ -5,7 +5,7 @@ class Hero extends React.Component {
         return (
             <div className='flex justify-center items-center w-full h-80 bg-red' >
                 <div className=' w-fit'>
-                    <p className="font-nycd text-8xl text-amber-50">Encuentra tu bolo</p>
+                    <h1 className="font-nothing text-8xl text-amber-50">Encuentra tu bolo</h1>
                 </div>
             </div>
         );

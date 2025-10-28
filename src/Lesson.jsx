@@ -3,56 +3,65 @@ import React from 'react';
 class Lesson extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isModalOpen: false};
+    this.state = { isModalOpen: false };
   }
 
   handleClickLesson() {
-    this.setState({isModalOpen: true});
+    this.setState({ isModalOpen: true });
   }
 
   handleClickClose() {
-    this.setState({isModalOpen: false});
+    this.setState({ isModalOpen: false });
   }
 
   render() {
-    let modal;
-    if (this.state.isModalOpen) {
-      modal = (
-        <div className='modal'>
-          <div className='modal-inner'>
-            <div className='modal-header'></div>
-            <div className='modal-introduction'>
-              <h2>{this.props.name}</h2>
-              <img src={this.props.image} alt="" className='profile-card-img' />
-              <p>{this.props.introduction}</p>
-            </div>
-              <button
-              className='modal-close-btn'
-
-            >
-              Ir a perfil
-            </button>
-            <button
-              className='modal-close-btn'
-              onClick={() => this.handleClickClose()}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      );
-    }
+    const { name, image, introduction } = this.props;
 
     return (
-      <div className='lesson-card'>
+      <div className="flex flex-col items-center justify-center my-8">
+        {/* Tarjeta de la lección */}
         <div
-          className='lesson-item'
-          onClick={() => {this.handleClickLesson()}}
+          onClick={() => this.handleClickLesson()}
+          className="cursor-pointer bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition duration-300 w-64"
         >
-          <p>{this.props.name}</p>
-          <img src={this.props.image} />
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-64 object-cover"
+          />
+          <p className="text-center text-xl text-gray-800 py-3">
+            {name}
+          </p>
         </div>
-        {modal}
+
+        {/* Modal */}
+        {this.state.isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+            <div className="bg-white p-6 rounded-xl shadow-2xl w-96 relative">
+              <h2 className="text-2xl text-center mb-4">{name}</h2>
+              <img
+                src={image}
+                alt={name}
+                className="w-full h-48 object-cover rounded-lg mb-3"
+              />
+              <p className="text-gray-600 text-base text-center mb-4">{introduction}</p>
+
+              <div className="flex justify-between">
+                <button
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Ir a perfil
+                </button>
+                <button
+                  onClick={() => this.handleClickClose()}
+                  className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

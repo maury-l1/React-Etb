@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './Header';
-import Menu from './Menu';
+import Artistas from './Artistas';
 import Footer from './Footer';
 import Hero from './Hero';
+import Hosts from './Hosts';
 
 class App extends React.Component{
   render() {
@@ -10,7 +11,8 @@ class App extends React.Component{
       <div>
         <Header />
         <Hero />
-        <Menu />
+        <Artistas />
+        <Hosts />
         <Footer />
       </div>
     );

@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        nothing: ['"Nothing You Could Do"', 'cursive'], // <- IMPORTANTE las comillas y mayúsculas
       },
     },
   },
