@@ -1,9 +1,4 @@
-import React from 'react';
-import Lesson from './Lesson';
-
-class Host extends React.Component {
-    render() {
-        const hostList = [
+       const hostList = [
             {
                 id: 1,
                 name: 'Bar La Esquina',
@@ -30,28 +25,4 @@ class Host extends React.Component {
             },
 
         ];
-
-        return (
-            <div >
-                
-                <div className='bg-orange h-14 flex items-center'>
-                     <h2 className=' ml-10 text-amber-50 text-4xl'>HOSTS</h2>
-                </div>
-                <div className="h-auto flex justify-center space-x-24 bg-red">
-                {hostList.map((hostItem) => {
-                    return (
-                        <Lesson
-                            key={hostItem.id}
-                            name={hostItem.name}
-                            image={hostItem.image}
-                            introduction={hostItem.introduction}
-                        />
-                    )
-                })}
-                </div>
-            </div>
-        )
-    }
-}
-
-export default Host;
+export default hostList

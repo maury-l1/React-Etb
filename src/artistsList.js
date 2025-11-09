@@ -1,9 +1,4 @@
-import React from 'react';
-import Lesson from './Lesson';
-
-class Artistas extends React.Component {
-  render() {
-    const artistList = [
+const artistList = [
       {
         id: 1,
         name: 'Lucía',
@@ -31,29 +26,4 @@ class Artistas extends React.Component {
 
     ];
 
-    return (
-      <div>
-        <div className='bg-orange h-14 flex items-center'>
-          <h2 className=' ml-10 text-amber-50 text-4xl'>ARTISTAS</h2>
-        </div>
-        <div className="h-auto flex justify-center space-x-24 bg-red">
-
-
-          {artistList.map((artistItem) => {
-            return (
-              <Lesson
-                key={artistItem.id}
-                name={artistItem.name}
-                image={artistItem.image}
-                introduction={artistItem.introduction}
-              />
-            );
-          })}
-
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Artistas;
+export default artistList;    
