@@ -1,22 +1,20 @@
+import { Routes, Route } from 'react-router-dom'
 import React from 'react';
-import Header from './Header';
-import Items from './Items';
-import Footer from './Footer';
-import Hero from './Hero';
-import artistsList from './artistsList'
-import hostsList from './hostsList'
+import Home from './components/Home';
+import Navbar from './components/NavBar';
+import Perfil from './components/Perfil'
 
 
-class App extends React.Component{
-  
+class App extends React.Component {
+
   render() {
     return (
       <div>
-        <Header />
-        <Hero />
-        <Items title = "ARTISTAS" list={artistsList}/>
-        <Items title = "HOSTS" list={hostsList}/>
-        <Footer />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Perfil" element={<Perfil />} />
+        </Routes>
       </div>
     );
   }
