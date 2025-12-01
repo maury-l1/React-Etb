@@ -3,21 +3,28 @@ import React from 'react';
 class Footer extends React.Component {
   render() {
     return (
-     <div className="bg-red footer py-6">
-  <div className="footer-inner max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-    
-    <div className="footer-logo text-center md:text-left">
-      <p className="text-lg font-semibold">Encuentra tu bolo</p>
-    </div>
-
-    <ul className="footer-list flex flex-col md:flex-row gap-4 md:gap-8 text-center">
-      <li className="cursor-pointer hover:underline">Servicios</li>
-      <li className="cursor-pointer hover:underline">Soporte</li>
-      <li className="cursor-pointer hover:underline">Contact</li>
-    </ul>
-    
-  </div>
-</div>
+      <footer className="bg-brown footer border-t border-white/10">
+        <div className='grid gap-6 md:grid-cols-4 w-3/5'>
+          <div className='w-3/5'>
+            <div className='md:col-span-2'>
+              <div>
+                <span className='text-white'>Encuentra tu bolo</span>
+              </div>
+              <p className='text-white'>Amplía tus oportunidades musicales: publica tus bolos y descubre locales que vibran contigo.</p>
+            </div>
+            <div>
+              <div>
+                <span className='text-white'>Contacto</span>
+              </div>
+            </div>
+            <div>
+              <div>
+                <span className='text-white'>Social</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 
     );
   }

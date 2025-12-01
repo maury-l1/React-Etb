@@ -18,11 +18,11 @@ class Lesson extends React.Component {
     const { name, image, introduction } = this.props;
 
     return (
-      <div className="flex flex-col items-center justify-center my-8">
+      <article className="flex flex-col items-center justify-center my-8">
         {/* Tarjeta de la lección */}
         <div
           onClick={() => this.handleClickLesson()}
-          className="cursor-pointer bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition duration-300 w-64"
+          className="cursor-pointer bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition duration-300 w-52"
         >
           <img
             src={image}
@@ -62,7 +62,7 @@ class Lesson extends React.Component {
             </div>
           </div>
         )}
-      </div>
+      </article>
     );
   }
 }

@@ -6,8 +6,8 @@ function Navbar() {
   const isActive = (path) => location.pathname === path
 
   return (
-    <nav className="bg-brown p-5">
-      <div className="navbar-container">
+    <nav className="bg-brown py-5 flex justify-center">
+      <div className="navbar-container w-3/5">
         <ul className="flex justify-between">
           <li>
             <Link

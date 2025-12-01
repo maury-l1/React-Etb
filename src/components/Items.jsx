@@ -10,11 +10,13 @@ class Items extends React.Component {
     console.log(title)
 
     return (
-      <div>
-        <div className='bg-orange h-14 flex items-center'>
-          <h2 className=' ml-10 text-amber-50 text-4xl'>{title}</h2>
+      <section className='bg-red flex flex-col justify-center '>
+        <div className='bg-orange h-14 flex justify-center items-center'>
+          <div className='flex justify-start w-3/5 h-fit'>
+            <h2 className='text-amber-50 text-4xl'>{title}</h2>
+          </div>
         </div>
-        <div className="h-auto flex justify-center space-x-24 bg-red">
+        <div className="h-auto flex justify-center space-x-16 bg-yellow-400 w-3/5 mx-auto">
 
 
           {list.map((item) => {
@@ -29,7 +31,7 @@ class Items extends React.Component {
           })}
 
         </div>
-      </div>
+      </section>  
     );
   }
 }
