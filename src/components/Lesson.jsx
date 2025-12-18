@@ -1,4 +1,5 @@
 import React from 'react';
+import AudioPlayer from './AudioPlayer';
 
 class Lesson extends React.Component {
   constructor(props) {
@@ -28,10 +29,12 @@ class Lesson extends React.Component {
             src={image}
             alt={name}
             className="w-full h-64 object-cover"
+            loading='lazy'
           />
           <p className="text-center text-xl text-gray-800 py-3">
             {name}
           </p>
+          
         </div>
 
         {/* Modal */}
@@ -45,6 +48,7 @@ class Lesson extends React.Component {
                 className="w-full h-48 object-cover rounded-lg mb-3"
               />
               <p className="text-gray-600 text-base text-center mb-4">{introduction}</p>
+              <AudioPlayer />
 
               <div className="flex justify-between">
                 <button
