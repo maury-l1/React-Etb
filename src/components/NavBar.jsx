@@ -19,16 +19,16 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/Perfil"
-              className={`text-amber-50 ${isActive('/Perfil') ? 'active' : 'text-amber-500'}`}
+              to="/perfil"
+              className={`text-amber-50 ${isActive('/perfil') ? 'active' : 'text-amber-500'}`}
             >
               Perfil
             </Link>
           </li>
           <li>
             <Link
-              to="/Contacto"
-              className={`text-amber-50 ${isActive('/Contacto') ? 'active' : 'text-amber-500'}`}
+              to="/contacto"
+              className={`text-amber-50 ${isActive('/contacto') ? 'active' : 'text-amber-500'}`}
             >
               Contacto
             </Link>

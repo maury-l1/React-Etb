@@ -1,5 +1,5 @@
 import React from 'react';
-import AudioPlayer from './AudioPlayer';
+
 
 class Lesson extends React.Component {
   constructor(props) {
@@ -48,7 +48,6 @@ class Lesson extends React.Component {
                 className="w-full h-48 object-cover rounded-lg mb-3"
               />
               <p className="text-gray-600 text-base text-center mb-4">{introduction}</p>
-              <AudioPlayer />
 
               <div className="flex justify-between">
                 <button
