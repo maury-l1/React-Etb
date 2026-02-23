@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Navbar from './components/NavBar';
 import Perfil from './components/Perfil'
 import Contacto from './components/Contacto'
-
+import Footer from './components/Footer';
 
 class App extends React.Component {
 
@@ -17,6 +17,7 @@ class App extends React.Component {
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/contacto" element={<Contacto />} />
         </Routes>
+        <Footer />
       </div>
     );
   }

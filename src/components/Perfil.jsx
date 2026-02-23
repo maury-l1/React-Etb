@@ -2,8 +2,6 @@ import { useRef } from 'react';
 import AudioPlayer from './AudioPlayer';
 import VideoPlayer from './VideoPlayer';
 
-{/* Pagina con useRef, focus, aria y responsive */}
-
 export default function Perfil() {
   const demosRef = useRef(null);
 
@@ -13,7 +11,8 @@ export default function Perfil() {
   };
 
   const handleContact = () => {
-    alert('Abrir formulario de contacto'); // logica temppral
+    console.log("Boton de contacto")
+    alert('Abrir formulario de contacto'); // lógica temporal
   };
 
   return (
@@ -21,7 +20,7 @@ export default function Perfil() {
 
       {/* Sección Perfil */}
       <section className="w-full max-w-4xl mx-auto p-8 font-sans">
-        <header className="flex flex-col sm:flex-col md:flex-row items-center gap-6">
+        <header className="flex flex-col md:flex-row items-center gap-6">
           {/* Avatar */}
           <img
             src="images/user.webp"
@@ -30,10 +29,9 @@ export default function Perfil() {
           />
 
           {/* Stats y nombre */}
-          <div className="mt-4 md:mt-0 md:ml-0 w-full md:w-3/5 text-center">
+          <div className="mt-4 md:mt-0 md:ml-0 w-full md:w-3/5 text-center bg-gray-300 p-4 rounded-lg">
             <h1 className="font-semibold text-xl mb-2">Nombre</h1>
 
-            {/* Stats perfil */}
             <div className="flex justify-between text-center w-full md:w-full">
               <div>
                 <h2 className="font-semibold text-lg">1,234</h2>
@@ -53,30 +51,42 @@ export default function Perfil() {
 
         {/* Bio */}
         <div className="mt-4 text-left">
-          <h2 className="font-semibold text-base">Descripcion</h2>
+          <h2 className="font-semibold text-base">Descripción</h2>
           <p className="text-sm text-gray-700 leading-tight mb-2">
             Bio del usuario <br />
             🌐 enlace.com
           </p>
         </div>
 
-        {/* Botones Contactar y ver demos (aria-labrl implementado) */}
+        {/* Botones Contactar y ver demos */}
         <div className="flex flex-col sm:flex-row justify-start space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
-          <button
-            onClick={handleContact}
+          {/* Contactar */}
+          <div
+            role="button"
+            tabIndex={0}
             aria-label="Contactar al artista por mensaje"
-            className="border border-gray-300 rounded-md px-4 py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
+            onClick={handleContact}
+            keyPress={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') handleContact(e);
+            }}
+            className="border border-gray-300 rounded-md px-4 py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 cursor-pointer flex justify-center items-center"
           >
             Contactar
-          </button>
+          </div>
 
-          <button
-            onClick={handleFocusDemos}
+          {/* Ver Demos */}
+          <div
+            role="button"
+            tabIndex={0}
             aria-label="Ir a la sección de demos"
-            className="border border-gray-300 rounded-md px-4 py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
+            onClick={handleFocusDemos}
+            keyPress={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') handleFocusDemos(e);
+            }}
+            className="border border-gray-300 rounded-md px-4 py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 cursor-pointer flex justify-center items-center"
           >
             Ver Demos
-          </button>
+          </div>
         </div>
       </section>
 
@@ -87,9 +97,11 @@ export default function Perfil() {
         aria-labelledby="demos-title"
         className="w-full max-w-4xl flex flex-col items-center space-y-8 px-4 md:px-0"
       >
-        <h1 id="demos-title" className="text-4xl font-bold text-amber-50">
-          Demos
-        </h1>
+         <div className="bg-orange w-full h-16 flex justify-center items-center mb-8">
+                <div className="w-3/5 flex justify-start">
+                    <h1 className="text-amber-50 text-4xl font-bold">Demos</h1>
+                </div>
+            </div>
 
         <p className="max-w-xl text-lg text-amber-200 text-center">
           Escucha algunos de mis últimos trabajos musicales. Puedes reproducir los demos de audio y video directamente desde aquí.
