@@ -1,42 +1,34 @@
-import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './Navbar.scss';
 
 function Navbar() {
-  const location = useLocation()
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const isActive = (path) => location.pathname === path
+  const isActive = (path) => location.pathname === path;
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav role='navigation' className="bg-brown py-5 flex justify-center">
-      <div className="navbar-container w-3/5">
-        <ul className="flex justify-between">
-          <li>
-            <Link
-              to="/"
-              className={`text-amber-50 ${isActive('/') ? 'active' : 'text-amber-500'}`}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/perfil"
-              className={`text-amber-50 ${isActive('/perfil') ? 'active' : 'text-amber-500'}`}
-            >
-              Perfil
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contacto"
-              className={`text-amber-50 ${isActive('/contacto') ? 'active' : 'text-amber-500'}`}
-            >
-              Contacto
-            </Link>
-          </li>
+    <nav className="navbar" role="navigation">
+      <div className="navbar-container">
+        {/* Botón hamburguesa */}
+        <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
+          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+        </button>
+
+        {/* Menú */}
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <li><Link to="/" className={isActive('/') ? 'active' : ''}>Home</Link></li>
+          <li><Link to="/perfil" className={isActive('/perfil') ? 'active' : ''}>Perfil</Link></li>
+          <li><Link to="/contacto" className={isActive('/contacto') ? 'active' : ''}>Contacto</Link></li>
         </ul>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

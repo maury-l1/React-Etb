@@ -1,0 +1,129 @@
+@import '../../public/variables';
+.navbar {
+  width: 100%;
+  background-color: $color-fondo-navbar;
+  font-family: $fuente-navbar;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  padding: $padding-navbar 1rem;
+
+  .navbar {
+  @if $modo-oscuro {
+    background-color: darken($color-fondo-navbar, 20%);
+  } @else {
+    background-color: $color-fondo-navbar;
+  }
+}
+
+.nav-links li {
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      margin-top: 0.5rem * $i;
+    }
+  }
+}
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 2rem;
+      height: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+
+      .bar {
+        height: 0.25rem;
+        width: 100%;
+        background-color: $color-amarillo;
+        transition: all 0.3s ease;
+      }
+
+      .bar.open:nth-child(1) {
+        transform: rotate(45deg) translateY(0.5rem);
+      }
+      .bar.open:nth-child(2) {
+        opacity: 0;
+      }
+      .bar.open:nth-child(3) {
+        transform: rotate(-45deg) translateY(-0.5rem);
+      }
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: $color-fondo-navbar;
+      display: none; // oculto por defecto
+      padding: 1rem 0;
+
+      &.open {
+        display: flex;
+        flex-direction: row; // enlaces en línea
+        justify-content: center;
+        gap: 2rem; // separación entre enlaces
+      }
+
+      li {
+        margin: 0; // usamos gap en lugar de margin
+        a {
+          color: $color-amarillo;
+          text-decoration: none;
+          font-size: 1rem;
+
+          &.active {
+            color: $color-amarillo-claro;
+            font-weight: bold;
+          }
+
+          &:hover {
+            color: $color-amarillo-claro;
+          }
+        }
+      }
+    }
+  }
+}
+
+// --------------------
+// Tablet y Desktop
+// --------------------
+@media (min-width: 768px) {
+  .navbar-container {
+    .hamburger {
+      display: none; 
+    }
+
+    .nav-links {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      justify-content: space-between;
+      width: $width-navbar-container;
+      padding: 0;
+
+      li {
+        margin: 0 1rem;
+
+        a {
+          font-size: $font-size-navbar-desktop;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links li a {
+    font-size: $font-size-navbar-large;
+  }
+}
